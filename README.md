@@ -18,4 +18,4 @@ python main.py
 
 Left/Right Arrows: Move the container.
 Space: Cycle the container color.
-Keys 1, 2, 3: Directly select the container color (blue, green, brown).
+Keys 1, 2, 3: Directly select the container color (green, white, orange).

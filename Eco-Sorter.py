@@ -11,10 +11,13 @@ screen_width = 800
 screen_height = 600 
 screen = pygame.display.set_mode((screen_width, screen_height)) # that's command create a visable screen with previous set up and we save it in variables screen 
 pygame.display.set_caption("Eco-sorter") # create a title for game screen 
+pygame.display.set_caption("Eco-sorter") # create a title for game screen 
 clock = pygame.time.Clock() # clock watching that game work with the same speed 
 FPS = 60 # limit frames 
 
 
+
+# - - - - Settings of difficulty - - - -   
 # - - - - Settings of difficulty - - - -   
 # Trash Speed 
 current_trash_speed_base = 4 # core of speed for all the squares  
@@ -35,6 +38,7 @@ trash_spawn_interval_step = 5 # step dicreasing of spawn, with each level trash_
 # Initial limits of objects 
 max_trash_on_screen = 2 # how many trash can be on the start of the game 
 max_trash_on_screen_cap = 8 # max limit of trash on the screen 
+
 
 
 # Downloading Sounds and Sprites 
@@ -59,6 +63,7 @@ glass_img = pygame.transform.scale(pygame.image.load('assets/glass.png').convert
 plastic_img = pygame.transform.scale(pygame.image.load('assets/plastic.png').convert_alpha(), (trash_width, trash_height))
 
 
+
 # sounds
 # insialization mixer for sound
 pygame.mixer.init()
@@ -67,6 +72,7 @@ pygame.mixer.init()
 correct_sound = pygame.mixer.Sound('assets/correct.wav')
 wrong_sound = pygame.mixer.Sound('assets/error.wav')
 
+# set up player 
 # set up player 
 player_x = (screen_width - player_width) // 2 # formula for centre objects. Width of screen - width of player and result / 2 and then player appear on the middle of the scrre horizontally 
 player_y = screen_height - player_height - 10 # Formula to put player on the lowest border . Player staying so that his lower partw was on 10 pixels higher than lower part of the screen
@@ -93,9 +99,11 @@ recycling_categories = [
 ]
 
 # trash settings 
+# trash settings 
 trash_width = 30
 trash_height = 30
 
+# function for creating new trash subject 
 # function for creating new trash subject 
 def spawn_trash(): # put code of creating the trash in seperate function, in conviniet purpose because it's neccessary to create new trash once we catch old trash or miss it, instead of repeating code we use spawn_trash()
     category_index = random.randint(0, len(recycling_categories) -1) # pick random index (0,1 or2)
