@@ -19,3 +19,5 @@ Controls
 Left/Right Arrows: Move the container.
 Space: Cycle the container color.
 Keys 1, 2, 3: Directly select the container color (green, white, orange).
+
+Keys 1, 2, 3: Directly select the container color (green, white, orange).
