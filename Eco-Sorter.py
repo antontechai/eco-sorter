@@ -17,8 +17,7 @@ FPS = 60 # limit frames
 
 
 
-# - - - - Settings of difficulty - - - -   
-# - - - - Settings of difficulty - - - -   
+# Settings of difficulty    
 # Trash Speed 
 current_trash_speed_base = 4 # core of speed for all the squares  
 current_trash_speed_variance = 0 # diversity of speed, change to 1 will change the speed to +-1, now 0 means all squarels fall with the same speed 
@@ -73,7 +72,6 @@ correct_sound = pygame.mixer.Sound('assets/correct.wav')
 wrong_sound = pygame.mixer.Sound('assets/error.wav')
 
 # set up player 
-# set up player 
 player_x = (screen_width - player_width) // 2 # formula for centre objects. Width of screen - width of player and result / 2 and then player appear on the middle of the scrre horizontally 
 player_y = screen_height - player_height - 10 # Formula to put player on the lowest border . Player staying so that his lower partw was on 10 pixels higher than lower part of the screen
 player_rect = pygame.Rect(player_x, player_y, player_width, player_height) # rect it's like container of my object that contain 4 items x,y,width and height
@@ -98,12 +96,11 @@ recycling_categories = [
     },
 ]
 
-# trash settings 
+ 
 # trash settings 
 trash_width = 30
 trash_height = 30
 
-# function for creating new trash subject 
 # function for creating new trash subject 
 def spawn_trash(): # put code of creating the trash in seperate function, in conviniet purpose because it's neccessary to create new trash once we catch old trash or miss it, instead of repeating code we use spawn_trash()
     category_index = random.randint(0, len(recycling_categories) -1) # pick random index (0,1 or2)
